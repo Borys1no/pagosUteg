@@ -1,43 +1,49 @@
-<!doctype html>
+<!DOCTYPE html>
 {% load static%}
 <html lang="en">
   <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="{%static 'css/main.css' %}">
-
-    
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="stylesheet" href="{%static 'css/main.css' %}" />
 
     <title>Bienvenidos!</title>
   </head>
   <body>
     <div class="container">
       <div class="container-nav">
-          <nav class="navbar">
-              <a href="#" class="txtLogo">Uteg Pagos</a>
-          </nav>
-      </div> <br>
-      
-      <div class="login-container">
-          <h1 class="txt-bienvenida">Bienvenidos</h1>
-          <img src="{% static 'img/logo-uteg.png' %}" alt="UTEG Logo" class="logo-uteg">
-          
-        
-
-          <form class="login-form" action="#" method="post">
-            {% csrf_token %}
-              <input type="email" class="user" placeholder="Usuario">
-              <input type="password" name="pass" id="" class="pass" placeholder="Contraseña">
-              {{ form.as_p }}
-              <button type="submit" class="btnIniciar">Iniciar Sesion</button>
-              <a href="#" class="soporte">Olvide mi contraseña</a>
-          
-
-          </form>
-          
+        <nav class="navbar">
+          <a href="#" class="txtLogo">Uteg Pagos</a>
+        </nav>
       </div>
-      
-  </div>
+      <br />
+
+      <div class="login-container">
+        <h1 class="txt-bienvenida">Bienvenidos</h1>
+        <img
+          src="{% static 'img/logo-uteg.png' %}"
+          alt="UTEG Logo"
+          class="logo-uteg"
+        />
+
+        <form class="login-form" action="/login/" method="POST">
+          {% csrf_token %}
+          <input type="email" class="user" placeholder="Usuario" />
+          <input
+            type="password"
+            name="pass"
+            id=""
+            class="pass"
+            placeholder="Contraseña"
+          />
+          {{ form.as_p }}
+          <button type="submit" class="btnIniciar">Iniciar Sesion</button>
+          <a href="#" class="soporte">Olvide mi contraseña</a>
+        </form>
+      </div>
+    </div>
   </body>
 </html>
